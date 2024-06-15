@@ -1,4 +1,4 @@
-{
+export default {
   "expo": {
     "name": "puddle",
     "slug": "puddle",
@@ -11,17 +11,29 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      "@react-native-google-signin/google-signin"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.native.puddle",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_INFOPLIST
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.native.puddle",
+      "googleServicesFile": process.env.GOOGLE_SERVICES__JSON
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cbceba76-54b0-4fea-9b37-01d9ff58cc4f"
+      }
     }
   }
 }
